@@ -5,10 +5,11 @@ class vehicle_904():
         self.average_of_vehicle = vehicleAverage
 
 class Car(vehicle_904):
-    def seating_capacity(self, capacity):
-        self.capacity = input("Enter seating capacity:")
-        print(f"Vehicle Name: ",self.name_of_vehicle,"Seating Capacity: ",self.capacity)
+    def __init__(self,vehicleName, maxSpeed, vehicleAverage,capacity):
+        vehicle_904.__init__(self,vehicleName, maxSpeed, vehicleAverage)
+        self.capacity = capacity
+    def seating_capacity(self):
+        print(f"Vehicle Name:",self.name_of_vehicle,",Seating Capacity: ",self.capacity)
 
-vehicleObj = vehicle_904("Car","120","60")
-obj = Car()
+obj = Car("Car",120,60,4)
 obj.seating_capacity()
